@@ -68,11 +68,12 @@ class ProgressSteps extends Component {
     const styles = {
       stepIcons: {
         position: 'relative',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
         alignSelf: 'center',
         flexDirection: 'row',
         top: this.props.topOffset,
         marginBottom: this.props.marginBottom,
+        width:"100%"
       },
     };
 
