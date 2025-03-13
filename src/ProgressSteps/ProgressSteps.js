@@ -23,6 +23,7 @@ class ProgressSteps extends Component {
   getChildProps() {
     return { ...this.props, ...this.state };
   }
+ 
 
   renderStepIcons = () => {
     let step = [];
@@ -43,6 +44,7 @@ class ProgressSteps extends Component {
               isLastStep={i === this.state.stepCount - 1}
               isCompletedStep={isCompletedStep}
               isActiveStep={isActiveStep}
+              onStepPress={this.onStepPress}
             />
           </View>
         </View>
@@ -63,7 +65,10 @@ class ProgressSteps extends Component {
       this.setState({ activeStep: step });
     }
   };
-
+  onStepPress = (num) => {
+    this.props.gotostep?.(num);
+  };
+  
   render() {
     const styles = {
       stepIcons: {
@@ -97,6 +102,7 @@ ProgressSteps.propTypes = {
   activeStep: PropTypes.number,
   topOffset: PropTypes.number,
   marginBottom: PropTypes.number,
+  gotostep: PropTypes.func
 };
 
 ProgressSteps.defaultProps = {
@@ -104,6 +110,7 @@ ProgressSteps.defaultProps = {
   activeStep: 0,
   topOffset: 30,
   marginBottom: 50,
+  gotostep: () => {},
 };
 
 export default ProgressSteps;
