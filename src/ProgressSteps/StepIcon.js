@@ -182,8 +182,22 @@ class StepIcon extends Component {
     }
 
     return (
+      
       <View style={{ flexDirection: 'column', alignItems: 'center' }}>
+        {this.props.isCompletedStep ?  
+        <TouchableOpacity style={styles.circleStyle} onPress={() => {  ;this.props.onStepPress?.(this.props.stepNum)}}>
+       
+       <Text style={styles.circleText}>
+         {this.props.isCompletedStep ? (
+           <Text style={{ color: this.props.completedCheckColor }}>&#10003;</Text>
+         ) : (
+           <Text style={styles.stepNum}>{this.props.stepNum}</Text>
+         )}
+       </Text>
+      
+     </TouchableOpacity> :
         <View style={styles.circleStyle}>
+       
           <Text style={styles.circleText}>
             {this.props.isCompletedStep ? (
               <Text style={{ color: this.props.completedCheckColor }}>&#10003;</Text>
@@ -191,11 +205,16 @@ class StepIcon extends Component {
               <Text style={styles.stepNum}>{this.props.stepNum}</Text>
             )}
           </Text>
+         
         </View>
+          }
         <Text style={styles.labelText}>{this.props.label}</Text>
+       
         {!this.props.isFirstStep && <View style={styles.leftBar} />}
         {!this.props.isLastStep && <View style={styles.rightBar} />}
+       
       </View>
+     
     );
   }
 }
