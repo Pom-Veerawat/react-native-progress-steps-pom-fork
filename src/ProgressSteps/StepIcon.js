@@ -42,7 +42,7 @@ class StepIcon extends Component {
         leftBar: {
           position: 'absolute',
           top: 60 / 2.5,
-          left: 20,
+          left: 15,
           right: 30 + 8,
           borderTopStyle: this.props.borderStyle,
           borderTopWidth: this.props.borderWidth,
@@ -101,7 +101,7 @@ class StepIcon extends Component {
         leftBar: {
           position: 'absolute',
           top: 60 / 2.5,
-          left: 20,
+          left: 15,
           right: 30 + 8,
           borderTopStyle: this.props.borderStyle,
           borderTopWidth: this.props.borderWidth,
@@ -158,7 +158,7 @@ class StepIcon extends Component {
         leftBar: {
           position: 'absolute',
           top: 60 / 2.5,
-          left: 20,
+          left: 15,
           right: 30 + 8,
           borderTopStyle: this.props.borderStyle,
           borderTopWidth: this.props.borderWidth,
